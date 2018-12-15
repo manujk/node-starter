@@ -1,0 +1,79 @@
+openapi: "3.0.0"
+
+info:
+  version: 1.0.0
+  title: Application Title
+  description: Description here
+
+servers:
+  - url: http://localhost:8081
+
+paths:
+  /path/get:
+    get:
+      summary: Return Description
+      operationId: "getName"
+      tags:
+        - GET /path/get
+      parameters:
+        - name: param
+          in: query
+          required: true
+          description: param description
+          schema:
+            type: object
+            properties:
+              param:
+                type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  param1:
+                    type: string
+                  param2:
+                    type: string
+                  param3:
+                    type: string
+                  param4:
+                    type: string
+                  param5:
+                    type: string
+                  param6:
+                    type: string
+                  param7:
+                    type: string
+                example:
+                  param1: dummy1
+                  param2: dummy2
+                  param3: dummy3
+                  param4: dummy
+                  param5: 2018-10-28 11-15-50
+                  param6: "1"
+                  param7: ""
+        '404':
+          description: The server can not find requested param
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                example:
+                  result: "not found!"
+        '400':
+          description: The server could not understand the request due to invalid syntax.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                example:
+                  result: "Unacceptable Input!"
