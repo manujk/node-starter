@@ -1,0 +1,21 @@
+redis:
+  host1: 192.168.1.142
+  port1: 6379
+  host2: 192.168.1.143
+  port2: 6379
+  host3: 192.168.1.144
+  port4: 6379
+  tableInitials: RealTimeProfile_0
+kafka:
+  hosts: 192.168.1.142:9092,192.168.1.143:9092,192.168.1.144:9092
+  groupId: realtime-profile
+batch:
+  dirToScan: ./data
+logger:
+  level: info
+server:
+  port: 8082
+
+TestData:
+  new_activation_1001:
+    initial: {"NotificationID":"15396633533552013571790","EventBeginTime":"2018-10-28 11-15-50","MSISDN":"66111111111","EventType":"1001","parameters":{"IMSI":"520002082279039","SubscriberPricePlanCode":"R11111111","ActivationDate":"2018-10-28 11-15-50","Language":"1","ChainID":"1"}}
